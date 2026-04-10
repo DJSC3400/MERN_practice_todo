@@ -20,10 +20,6 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/auth', authRoutes);
 app.use('/todos', todoRoutes);  // All /todos routes are now protected
 
-app.listen(process.env.PORT, () =>
-    console.log(`Server running on port ${process.env.PORT}`)
-);
-
 // Create Todo
 app.post('/todos', async (req, res) => {
     try {
