@@ -1,13 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #1a0033;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .chrome-text {
+    background: linear-gradient(180deg, #ffffff 0%, #cc99ff 30%, #9933ff 60%, #ff66ff 80%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 12px rgba(200, 100, 255, 0.8));
+  }
+
+  .neon-yellow {
+    color: #ffe600;
+    filter: drop-shadow(0 0 8px #ffe600) drop-shadow(0 0 20px #ff9900);
+  }
+
+  .neon-yellow-text {
+    color: #ffe600;
+    filter: drop-shadow(0 0 4px #ffe600);
+  }
+
+  .retro-card {
+    @apply bg-purple-950/40 border border-purple-500/30 rounded-xl p-6 backdrop-blur-sm;
+  }
+
+  .retro-label {
+    @apply block text-purple-300/60 text-xs tracking-widest uppercase mb-1;
+  }
+
+  .retro-input {
+    @apply w-full bg-[#14002a]/70 border border-purple-500/40 rounded-lg
+           text-white placeholder-purple-400/30 text-sm px-4 py-2.5 mb-4
+           outline-none focus:border-purple-400/70 transition;
+  }
+
+  .retro-btn {
+    @apply w-full font-retro text-xl tracking-widest text-white rounded-lg py-2.5
+           border border-purple-300/20 transition hover:brightness-110;
+    background: linear-gradient(135deg, #7700cc, #cc00ff);
+    box-shadow: 0 0 18px rgba(160, 0, 255, 0.45);
+  }
+
+  .retro-btn-sm {
+    @apply font-retro text-lg tracking-widest text-white rounded-lg px-5
+           border border-purple-300/20 transition hover:brightness-110 whitespace-nowrap;
+    background: linear-gradient(135deg, #7700cc, #cc00ff);
+    box-shadow: 0 0 14px rgba(160, 0, 255, 0.4);
+  }
 }
